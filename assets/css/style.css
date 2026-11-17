@@ -781,6 +781,435 @@ html.snap { scroll-snap-type: y proximity; }
   }
 }
 
+/* About page */
+.about-page {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size-adjust: from-font;
+}
+
+.about-header .instagram-icon {
+  display: block;
+  width: clamp(1rem, 1.8vw, 1.4rem);
+  aspect-ratio: 1;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.75;
+}
+
+.about-header .instagram-icon__dot {
+  fill: currentColor;
+  stroke: none;
+}
+
+.about-hero {
+  --about-bg: url("../images/aboutme-background.png");
+  position: relative;
+  isolation: isolate;
+  padding: calc(var(--menu-h) + clamp(3rem, 6vw, 5rem)) var(--pad) clamp(4rem, 7vw, 6rem);
+  background: #0a0a0a;
+}
+
+.about-hero::before,
+.about-hero::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+}
+
+.about-hero::before {
+  z-index: -2;
+  background-image: var(--about-bg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.about-hero::after {
+  z-index: -1;
+  background: linear-gradient(to bottom, transparent 70%, #000 100%);
+}
+
+.about-hero__plus {
+  position: absolute;
+  z-index: 1;
+  inset-block-start: calc(var(--menu-h) + 1rem);
+  color: var(--white);
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.about-hero__plus--left {
+  inset-inline-start: var(--pad);
+}
+
+.about-hero__plus--right {
+  inset-inline-end: var(--pad);
+}
+
+.about-hero__inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+  grid-template-areas:
+    "title    portrait"
+    "lead     portrait"
+    "body     portrait"
+    "quote    quote";
+  align-items: center;
+  gap: 0 clamp(2rem, 6vw, 5rem);
+  width: min(100%, 76rem);
+  margin-inline: auto;
+}
+
+.about-copy {
+  display: contents; /* its children sit directly in the hero grid */
+  max-width: 62ch;
+  justify-self: center;
+  text-align: right;
+}
+
+.about-title,
+.about-lead,
+.about-body {
+  width: min(100%, 40rem); /* keeps the text column width it had before */
+  justify-self: center;
+}
+
+.about-title {
+  grid-area: title;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  gap: 0.3em;
+  margin: 0 0 clamp(1.5rem, 3vw, 2.5rem);
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.about-title span {
+  font-size: 0.9em;
+}
+
+.about-lead {
+  grid-area: lead;
+  margin: 0 auto 1.5rem;
+  font-size: clamp(1.5rem, 2.8vw, 2.25rem);
+  line-height: 1.35;
+}
+
+.about-lead em {
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+}
+
+.about-body {
+  grid-area: body;
+  max-width: 60ch;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: clamp(1rem, 1.2vw, 1.125rem);
+  line-height: 1.8;
+}
+
+.about-quote {
+  grid-area: quote; /* spans both columns = centred on the page */
+  justify-self: center;
+  position: relative;
+  max-width: 44rem;
+  margin: clamp(2rem, 4vw, 3rem) auto 0;
+  padding: 1.5rem 2rem;
+  font-size: clamp(1.35rem, 2.4vw, 1.9rem);
+  line-height: 1.45;
+  text-align: center;
+}
+
+.about-quote p {
+  margin: 0;
+}
+
+.about-quote strong {
+  font-family: "Times New Roman", Times, serif;
+  font-size: calc(1em + 0.1875rem);
+  font-weight: 700;
+  font-style: italic;
+}
+
+.about-quote::before,
+.about-quote::after {
+  position: absolute;
+  font-family: "Times New Roman", Times, serif;
+  color: rgba(255, 255, 255, 0.42);
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.about-quote::before {
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  content: "\201C";
+}
+
+.about-quote::after {
+  inset-block-end: 0;
+  inset-inline-end: 0;
+  content: "\201D";
+}
+
+.about-portrait {
+  grid-area: portrait;
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: min(100%, 24rem);
+  aspect-ratio: 5 / 6;
+  justify-self: center;
+  margin: 1px;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 0.75rem;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+  object-fit: cover;
+}
+
+.about-portrait::before,
+.about-portrait::after {
+  position: absolute;
+  display: block;
+  background: rgba(255, 255, 255, 0.18);
+  content: "";
+}
+
+.about-portrait::before {
+  inset-block-start: 27%;
+  width: 5rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+
+.about-portrait::after {
+  inset-block-end: 17%;
+  width: 58%;
+  height: 34%;
+  border-radius: 50% 50% 12% 12%;
+}
+
+.about-services {
+  padding: clamp(2.5rem, 6vw, 5rem) var(--pad);
+  background: #000;
+}
+
+.about-services__list {
+  display: grid;
+  gap: 1rem;
+  width: min(100%, 76rem);
+  margin-inline: auto;
+}
+
+.service-card {
+  --service-title-size: clamp(1.05rem, 2vw, 1.5rem);
+  display: grid;
+  grid-template-rows: auto 0fr;
+  padding: 1rem clamp(1rem, 3vw, 2rem);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 1rem;
+  background: #0a0a0a;
+  color: var(--white);
+}
+
+.service-card__title {
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0;
+  font-size: var(--service-title-size);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.service-card__slashes {
+  font-weight: 400;
+}
+
+.service-card__plus {
+  margin-inline-start: auto;
+  font-size: 1.5em;
+  font-weight: 300;
+  line-height: 1;
+  rotate: 0deg;
+}
+
+.service-card__details {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.service-card__details-inner {
+  display: grid;
+  min-height: 0;
+  grid-template-columns: minmax(7rem, 0.5fr) minmax(0, 1.5fr) minmax(7rem, 0.45fr);
+  align-items: center;
+  gap: clamp(1rem, 3vw, 2rem);
+  padding-block-start: 1rem;
+  opacity: 0;
+  transform: translateY(-0.4rem);
+}
+
+.service-card__link {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  color: inherit;
+  text-underline-offset: 0.2em;
+}
+
+.service-card__link:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+.service-desc {
+  margin: 0;
+  line-height: 1.65;
+}
+
+.service-card__details-inner img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 0.5rem;
+  object-fit: cover;
+}
+
+@media (hover: hover) {
+  .service-card:is(:hover, :focus-within) {
+    grid-template-rows: auto 1fr;
+    background: #f5f5f5;
+    color: #000;
+  }
+
+  .service-card:is(:hover, :focus-within) .service-card__plus {
+    rotate: 45deg;
+  }
+
+  .service-card:is(:hover, :focus-within) .service-card__details-inner {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (hover: none) {
+  .service-card {
+    grid-template-rows: auto 1fr;
+    background: #f5f5f5;
+    color: #000;
+  }
+
+  .service-card__details-inner {
+    opacity: 1;
+    transform: none;
+  }
+
+  .service-card__plus {
+    rotate: 45deg;
+  }
+}
+
+@media (max-width: 48rem) {
+  .about-hero__inner {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "title"
+      "portrait"
+      "lead"
+      "body"
+      "quote";
+    gap: 0;
+  }
+
+  .about-portrait {
+    width: min(76%, 22rem);
+    margin-block-end: 2.5rem;
+  }
+
+  .service-card__details-inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.75rem;
+  }
+
+  .service-card__details-inner img {
+    max-height: 14rem;
+  }
+}
+
+/* About page — desktop only */
+@media (min-width: 48.0625rem) {
+  /* less space between the quote and the services */
+  .about-hero {
+    padding-block-end: clamp(1.5rem, 3vw, 2.5rem);
+  }
+
+  .about-services {
+    padding-block-start: clamp(1rem, 2vw, 1.5rem);
+  }
+
+  /* photo stretches from the top of THE ARTIST to the end of the text */
+  .about-portrait {
+    align-self: stretch;
+    aspect-ratio: auto;
+    contain: size; /* the photo follows the text height instead of pushing it */
+    min-height: 18rem;
+  }
+
+  /* open card: See more | photo | paragraph */
+  .service-card__details-inner {
+    grid-template-columns: minmax(7rem, 0.5fr) minmax(7rem, 0.45fr) minmax(0, 1.5fr);
+  }
+
+  .service-card__details-inner img {
+    order: 1;
+  }
+
+  .service-desc {
+    order: 2;
+  }
+
+  /* See more starts where the word after // starts */
+  .service-card__slashes {
+    display: inline-block;
+    width: 1em;
+  }
+
+  .service-card__link {
+    margin-inline-start: calc(var(--service-title-size) + 0.75rem);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .service-card {
+    transition: grid-template-rows 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .service-card__details-inner {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .service-card__plus {
+    transition: rotate 0.3s ease;
+  }
+}
+
+@supports not (font-size-adjust: from-font) {
+  .about-quote strong {
+    font-size: calc(1em + 0.1875rem);
+  }
+}
+
 /* Responsive layouts */
 @media (max-width: 40rem) {
   .grid {
@@ -817,7 +1246,8 @@ html.snap { scroll-snap-type: y proximity; }
     grid-template-columns: 1fr;
   }
 
-  .contact-header .nav-links {
+  .contact-header .nav-links,
+  .about-header .nav-links {
     gap: 0.75rem;
   }
 }

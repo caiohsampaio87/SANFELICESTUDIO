@@ -10,6 +10,112 @@
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+  <header class="header about-header">
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="index.html#top">Home</a>
+      <div class="nav-links">
+        <a href="aboutme.html" aria-current="page">The Artist</a>
+        <a href="index.html#work">Gallery</a>
+        <a href="contact.html">Contact</a>
+        <a href="https://www.instagram.com/sanfelicecaio/"
+           target="_blank"
+           rel="noopener"
+           aria-label="Instagram"
+           title="Instagram">
+          <svg class="instagram-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+            <circle cx="12" cy="12" r="4"></circle>
+            <circle class="instagram-icon__dot" cx="17.5" cy="6.5" r="1"></circle>
+          </svg>
+        </a>
+      </div>
+    </nav>
+  </header>
+  <main class="about-page">
+    <section class="about-hero" id="top" aria-labelledby="about-title">
+      <span class="about-hero__plus about-hero__plus--left" aria-hidden="true">+</span>
+      <span class="about-hero__plus about-hero__plus--right" aria-hidden="true">+</span>
+      <div class="about-hero__inner">
+        <div class="about-copy">
+          <h1 class="about-title" id="about-title">
+            <span aria-hidden="true">✱</span> THE ARTIST
+          </h1>
+          <p class="about-lead">
+            Lorem ipsum dolor sit amet, <em>consectetur adipiscing</em> elit, sed do eiusmod tempor.
+          </p>
+          <p class="about-body">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vitae sem at lacus
+            consequat feugiat. Integer euismod, erat vel tincidunt malesuada, justo velit
+            ullamcorper lorem, non pretium magna neque sed sapien. Sed ut perspiciatis unde
+            omnis iste natus error sit voluptatem accusantium doloremque laudantium.
+          </p>
+          <blockquote class="about-quote">
+            <p>The result doesn't <strong>document</strong> a scene — it <strong>constructs</strong> one.</p>
+          </blockquote>
+        </div>
+        <img class="about-portrait"
+  src="assets/images/sanfelice-photographer.jpeg"
+  alt="Portrait of Caio Sanfelice">
+      </div>
+    </section>
+
+    <section class="about-services" aria-label="Services">
+      <div class="about-services__list">
+        <article class="service-card">
+          <h2 class="service-card__title">
+            <span class="service-card__slashes" aria-hidden="true">//</span> PHOTOGRAPHY
+            <span class="service-card__plus" aria-hidden="true">+</span>
+          </h2>
+          <div class="service-card__details">
+            <div class="service-card__details-inner">
+              <a class="service-card__link" href="gallery.html">See more</a>
+              <p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi, sed do eiusmod tempor.</p>
+              <img src="assets/images/portraits.png" alt="Photography work (placeholder)" loading="lazy">
+            </div>
+          </div>
+        </article>
+        <article class="service-card">
+          <h2 class="service-card__title">
+            <span class="service-card__slashes" aria-hidden="true">//</span> BEAUTY
+            <span class="service-card__plus" aria-hidden="true">+</span>
+          </h2>
+          <div class="service-card__details">
+            <div class="service-card__details-inner">
+              <a class="service-card__link" href="gallery.html">See more</a>
+              <p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi, sed do eiusmod tempor.</p>
+              <img src="assets/images/portraits.png" alt="Beauty work (placeholder)" loading="lazy">
+            </div>
+          </div>
+        </article>
+        <article class="service-card">
+          <h2 class="service-card__title">
+            <span class="service-card__slashes" aria-hidden="true">//</span> SET PRODUCTION
+            <span class="service-card__plus" aria-hidden="true">+</span>
+          </h2>
+          <div class="service-card__details">
+            <div class="service-card__details-inner">
+              <a class="service-card__link" href="gallery.html">See more</a>
+              <p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi, sed do eiusmod tempor.</p>
+              <img src="assets/images/portraits.png" alt="Set production work (placeholder)" loading="lazy">
+            </div>
+          </div>
+        </article>
+        <article class="service-card">
+          <h2 class="service-card__title">
+            <span class="service-card__slashes" aria-hidden="true">//</span> STAGE &amp; SCREEN
+            <span class="service-card__plus" aria-hidden="true">+</span>
+          </h2>
+          <div class="service-card__details">
+            <div class="service-card__details-inner">
+              <a class="service-card__link" href="gallery.html">See more</a>
+              <p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi, sed do eiusmod tempor.</p>
+              <img src="assets/images/portraits.png" alt="Stage and screen work (placeholder)" loading="lazy">
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
   <footer class="site-footer site-footer--home">
     <section class="footer-substack" aria-label="Substack newsletter signup">
       <div class="footer-substack__layout">
