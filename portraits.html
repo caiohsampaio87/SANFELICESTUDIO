@@ -59,54 +59,77 @@
       </nav>
       <div class="grid">
         <figure class="card">
-          <img src="assets/images/taurus.png" alt="Fashion portrait in a black hat" loading="lazy">
+          <img src="assets/images/portraits.png" alt="Fashion portrait in a black hat (placeholder)" loading="lazy">
         </figure>
         <figure class="card">
-          <img src="assets/images/man-portrait.jpg" alt="Close-up fashion portrait" loading="lazy">
+          <img src="assets/images/portraits.png" alt="Close-up fashion portrait (placeholder)" loading="lazy">
         </figure>
         <figure class="card">
-          <img src="assets/images/hourglass.png" alt="Editorial fashion portrait in a sculptural outfit" loading="lazy">
+          <img src="assets/images/portraits.png" alt="Editorial fashion portrait in a sculptural outfit (placeholder)" loading="lazy">
         </figure>
         <figure class="card">
-          <img src="assets/images/542547169_18525129829000034_1111729122788806521_n.jpg" alt="Fashion portrait in a black hat" loading="lazy">
+          <img src="assets/images/portraits.png" alt="Fashion portrait in a black hat (placeholder)" loading="lazy">
         </figure>
         <figure class="card">
-          <img src="assets/images/Screenshot+2023-01-13+at+11.10.44.webp" alt="Close-up fashion portrait" loading="lazy">
+          <img src="assets/images/portraits.png" alt="Close-up fashion portrait (placeholder)" loading="lazy">
         </figure>
         <figure class="card">
-          <img src="assets/images/Cover+04.webp" alt="Editorial fashion portrait in a sculptural outfit" loading="lazy">
+          <img src="assets/images/portraits.png" alt="Editorial fashion portrait in a sculptural outfit (placeholder)" loading="lazy">
         </figure>
         <figure class="card">
-          <img src="assets/images/542547169_18525129829000034_1111729122788806521_n.jpg" alt="Fashion portrait in a black hat" loading="lazy">
+          <img src="assets/images/portraits.png" alt="Fashion portrait in a black hat (placeholder)" loading="lazy">
         </figure>
         <figure class="card">
-          <img src="assets/images/Screenshot+2023-01-13+at+11.10.44.webp" alt="Close-up fashion portrait" loading="lazy">
+          <img src="assets/images/portraits.png" alt="Close-up fashion portrait (placeholder)" loading="lazy">
         </figure>
         <figure class="card">
-          <img src="assets/images/Cover+04.webp" alt="Editorial fashion portrait in a sculptural outfit" loading="lazy">
+          <img src="assets/images/portraits.png" alt="Editorial fashion portrait in a sculptural outfit (placeholder)" loading="lazy">
         </figure>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <nav class="footer-socials" aria-label="Social media">
-      <a class="footer-social-link footer-social-link--substack" href="https://caiosanfelice.substack.com/" target="_blank" rel="noopener" aria-label="Substack">
-        <svg class="footer-substack-mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+  <footer class="site-footer site-footer--home">
+    <section class="footer-substack" aria-label="Substack newsletter signup">
+      <div class="footer-substack__layout">
+        <svg class="footer-substack__logo" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
           <path d="M22.539 8.242H1.46V5.406h21.08v2.836z"/>
           <path d="M1.46 10.812V24L12 18.11 22.54 24V10.812H1.46z"/>
           <path d="M22.54 0H1.46v2.836h21.08V0z"/>
         </svg>
-      </a>
-      <a class="footer-social-link" href="https://www.instagram.com/sanfelicecaio/" target="_blank" rel="noopener" aria-label="Instagram">
-        <i class="fa-brands fa-instagram" aria-hidden="true"></i>
-      </a>
-      <a class="footer-social-link" href="https://open.spotify.com/show/2PPKluHDKjqf2KXSEBb2aw?si=ea20f6b74fbf48a6" target="_blank" rel="noopener" aria-label="Spotify">
-        <i class="fa-brands fa-spotify" aria-hidden="true"></i>
-      </a>
-    </nav>
+        <div class="footer-substack__content">
+          <form class="footer-substack__form"
+                action="https://caiosanfelice.substack.com/api/v1/free?nojs=true"
+                method="POST"
+                target="footer-substack-response">
+            <label class="footer-substack__visually-hidden" for="footer-substack-email">Email address</label>
+            <input id="footer-substack-email"
+                   type="email"
+                   name="email"
+                   autocomplete="email"
+                   spellcheck="false"
+                   placeholder="Type your email..."
+                   required>
+            <button type="submit">Subscribe</button>
+          </form>
+          <p class="footer-substack__message" role="status" aria-live="polite" hidden></p>
+        </div>
+      </div>
+      <p class="footer-substack__legal">
+        By subscribing you agree to Substack's
+        <a href="https://substack.com/tos">Terms of Use</a>, our
+        <a href="https://substack.com/privacy">Privacy Policy</a> and our
+        <a href="https://substack.com/information-collection-notice">Information collection notice</a>
+      </p>
+      <iframe class="footer-substack__frame"
+              name="footer-substack-response"
+              title="Substack signup response"></iframe>
+    </section>
+    <div class="footer-brand">
+      <img src="assets/images/logo-sanfelicestudio.svg" alt="Sanfelice Studio">
+    </div>
     <div class="footer-contact">
-      <a href="contact.html"><h5>Get in touch &gt;&gt;</h5></a>
+      <a href="contact.html">Get in touch &gt;&gt;</a>
       <p>© 2026, Caio Sanfelice, all images are subjected to copyright</p>
     </div>
   </footer>

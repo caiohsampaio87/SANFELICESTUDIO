@@ -40,5 +40,49 @@
       </div>
     </section>
   </main>
+  <footer class="site-footer site-footer--home">
+    <section class="footer-substack" aria-label="Substack newsletter signup">
+      <div class="footer-substack__layout">
+        <svg class="footer-substack__logo" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M22.539 8.242H1.46V5.406h21.08v2.836z"/>
+          <path d="M1.46 10.812V24L12 18.11 22.54 24V10.812H1.46z"/>
+          <path d="M22.54 0H1.46v2.836h21.08V0z"/>
+        </svg>
+        <div class="footer-substack__content">
+          <form class="footer-substack__form"
+                action="https://caiosanfelice.substack.com/api/v1/free?nojs=true"
+                method="POST"
+                target="footer-substack-response">
+            <label class="footer-substack__visually-hidden" for="footer-substack-email">Email address</label>
+            <input id="footer-substack-email"
+                   type="email"
+                   name="email"
+                   autocomplete="email"
+                   spellcheck="false"
+                   placeholder="Type your email..."
+                   required>
+            <button type="submit">Subscribe</button>
+          </form>
+          <p class="footer-substack__message" role="status" aria-live="polite" hidden></p>
+        </div>
+      </div>
+      <p class="footer-substack__legal">
+        By subscribing you agree to Substack's
+        <a href="https://substack.com/tos">Terms of Use</a>, our
+        <a href="https://substack.com/privacy">Privacy Policy</a> and our
+        <a href="https://substack.com/information-collection-notice">Information collection notice</a>
+      </p>
+      <iframe class="footer-substack__frame"
+              name="footer-substack-response"
+              title="Substack signup response"></iframe>
+    </section>
+    <div class="footer-brand">
+      <img src="assets/images/logo-sanfelicestudio.svg" alt="Sanfelice Studio">
+    </div>
+    <div class="footer-contact">
+      <a href="contact.html">Get in touch &gt;&gt;</a>
+      <p>© 2026, Caio Sanfelice, all images are subjected to copyright</p>
+    </div>
+  </footer>
 </body>
 </html>
