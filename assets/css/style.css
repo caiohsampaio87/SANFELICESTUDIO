@@ -278,8 +278,8 @@ html.snap { scroll-snap-type: y proximity; }
 
 .footer-substack {
   display: flex;
-  width: 70%;
-  min-width: min(100%, 18rem);
+  width: 84%;
+  min-width: min(100%, 21.3rem);
   flex-direction: column;
   align-items: center;
   gap: 0.525rem;
@@ -328,7 +328,7 @@ html.snap { scroll-snap-type: y proximity; }
   flex: 1;
   min-width: 0;
   min-height: 44px;
-  padding: 0.75rem 1rem;
+  padding: 0.5rem 1rem;
   border: 0;
   border-radius: 6px 0 0 6px;
   background: #1a1a1a;
@@ -346,7 +346,7 @@ html.snap { scroll-snap-type: y proximity; }
   box-sizing: border-box;
   flex: 0 0 auto;
   min-height: 44px;
-  padding: 0.75rem;
+  padding: 0.5rem 0.75rem;
   border: 0;
   border-radius: 0 6px 6px 0;
   background: #e6e6e6;
@@ -390,7 +390,7 @@ html.snap { scroll-snap-type: y proximity; }
   width: 100%;
   margin: 0;
   color: #999;
-  font-size: 0.75rem;
+  font-size: 0.68rem;
   line-height: 1.5;
   text-align: center;
 }
@@ -405,7 +405,8 @@ html.snap { scroll-snap-type: y proximity; }
   outline-offset: 2px;
 }
 
-.footer-substack__visually-hidden {
+.footer-substack__visually-hidden,
+.visually-hidden {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -516,39 +517,274 @@ html.snap { scroll-snap-type: y proximity; }
 }
 
 /* Contact page */
-.contact-hero {
-  min-height: 62vh;
-  padding: calc(var(--menu-h) + 56px) var(--pad) 40px;
+.contact-page-main {
+  --contact-bg: #a51d24;
+  box-sizing: border-box;
+  container: contact-page / inline-size;
+  display: grid;
+  min-height: 100svh;
+  place-items: center;
+  padding: calc(var(--menu-h) + clamp(1.25rem, 3vw, 2rem)) var(--pad) clamp(2rem, 4vw, 3rem);
+  background: var(--contact-bg);
+}
+
+.contact-card {
+  box-sizing: border-box;
+  display: grid;
+  width: min(100%, 76rem);
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  grid-template-areas: "info form";
+  align-items: stretch;
+  gap: clamp(2rem, 5vw, 4rem);
+  padding: clamp(1.5rem, 4vw, 3.5rem);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 1.5rem;
+  background: #080808;
+  --contact-title-size: clamp(2rem, 4.2vw, 3.25rem);
+}
+
+.contact-information {
+  grid-area: info;
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 1.25rem;
+  padding-top: calc(var(--contact-title-size) / 2 + 20px); /* map top = a little below the middle of GET IN TOUCH */
+}
+
+.contact-map {
+  display: block;
+  width: 100%;
+  flex: 1; /* grows to fill the column, from mid-title down to the details */
+  min-height: 272px;
+  border: 0;
+  filter: grayscale(100%);
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end; /* line up with the map's right edge */
+  flex-wrap: wrap;
+  gap: 0 0.75rem; /* vertical, horizontal space between Tel, Email, Address */
+  text-align: right;
+}
+
+.contact-details__link {
+  display: inline-flex;
+  max-width: 100%;
+  min-height: 30px;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  color: var(--white);
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.contact-details__link i {
+  font-size: 1.1rem;
+}
+
+.contact-details__link:hover,
+.contact-details__link:focus-visible {
+  color: var(--grey);
+}
+
+.contact-details__link:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+.contact-details p {
+  display: flex;
+  max-width: 100%;
+  min-height: 40px; /* same height as the Tel/Email links, so spacing is even */
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.contact-form-panel {
+  grid-area: form;
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  justify-content: flex-end; /* sit at the bottom, aligned with the address */
+}
+
+.contact-form-title {
   display: flex;
   align-items: center;
-}
-.contact-cols {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: clamp(24px, 4vw, 64px);
-  padding: 0 var(--pad) 56px;
-}
-.contact-col { border-top: 2px solid var(--line); padding-top: 22px; }
-.contact-col h2 { margin: 0 0 14px; font-size: 14px; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; color: var(--grey); }
-.contact-col a.big {
-  display: inline-block;
-  font-size: clamp(22px, 2.4vw, 34px);
+  gap: 0.2em;
+  margin: 0 0 clamp(1.5rem, 3vw, 2.25rem);
+  font-size: var(--contact-title-size);
   font-weight: 800;
-  line-height: 1.15;
-  word-break: break-word;
-  transition: color 0.2s;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
-.contact-col a.big:hover { color: var(--cyan); }
+
+.contact-form-title__asterisk {
+  font-size: 1.05em;
+  line-height: 0.8;
+}
+
+.contact-form {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.contact-name-group {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.contact-name-group legend {
+  margin-block-end: 0.4rem;
+  padding: 0;
+}
+
+.contact-input-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1rem, 3vw, 2rem);
+}
+
+.contact-field {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.contact-field__label {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.875rem;
+}
+
+.contact-field input,
+.contact-field textarea {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 44px;
+  padding: 0.5rem 0;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 0;
+  background: transparent;
+  color: var(--white);
+  font: inherit;
+  font-size: max(1rem, 1em);
+}
+
+.contact-field input::placeholder {
+  color: rgba(255, 255, 255, 0.58);
+  opacity: 1;
+}
+
+.contact-field input:focus-visible,
+.contact-field textarea:focus-visible {
+  outline: none;
+  border-bottom-color: var(--white);
+  box-shadow: 0 1px 0 var(--white);
+}
+
+.contact-field textarea {
+  line-height: 1.4;
+  resize: vertical;
+}
+
+.contact-submit {
+  justify-self: end;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0.65rem 1.4rem;
+  border: 1px solid var(--white);
+  border-radius: 0;
+  background: transparent;
+  color: var(--white);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.contact-submit:hover {
+  background: var(--white);
+  color: #080808;
+}
+
+.contact-submit:focus-visible {
+  outline: 2px solid var(--white);
+  outline-offset: 3px;
+}
+
+.contact-submit:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.contact-form[hidden] {
+  display: none;
+}
+
+.contact-form-status {
+  margin: 0;
+  color: var(--white);
+  line-height: 1.5;
+}
+
+.contact-form-status.is-error {
+  color: #dc8585;
+}
+
+@container contact-page (width <= 56rem) {
+  .contact-card {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "form"
+      "info";
+    gap: 2.25rem;
+  }
+
+  .contact-information {
+    padding-top: 0;
+  }
+
+  .contact-map {
+    flex: none;
+    height: 272px;
+  }
+
+  .contact-input-row--split {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@container contact-page (width <= 36rem) {
+  .contact-card {
+    padding: 1.5rem 1.25rem;
+    padding-block-start: 3rem;
+    border-radius: 1rem;
+  }
+
+  .contact-form-title {
+    font-size: clamp(2.05rem, 9.1vw, 2.85rem);
+  }
+}
 
 /* Responsive layouts */
 @media (max-width: 40rem) {
-  .grid,
-  .contact-cols {
+  .grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .contact-hero {
-    min-height: auto;
   }
 }
 
@@ -563,10 +799,6 @@ html.snap { scroll-snap-type: y proximity; }
 
   .hero__title {
     letter-spacing: 0.04em;
-  }
-
-  .contact-cols {
-    grid-template-columns: 1fr;
   }
 
   .site-footer {
@@ -584,6 +816,10 @@ html.snap { scroll-snap-type: y proximity; }
   .grid {
     grid-template-columns: 1fr;
   }
+
+  .contact-header .nav-links {
+    gap: 0.75rem;
+  }
 }
 
 @media (max-width: 56rem) {
@@ -595,7 +831,7 @@ html.snap { scroll-snap-type: y proximity; }
   }
 
   .footer-substack {
-    width: min(70%, 34rem);
+    width: min(100%, 34rem);
   }
 
   .footer-brand {
