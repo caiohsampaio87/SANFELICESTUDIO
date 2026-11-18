@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="assets/images/fav-icon.svg">
   <title>The Artist | Sanfelice Studio</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Macondo&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap');
@@ -12,7 +13,9 @@
 <body>
   <header class="header about-header">
     <nav class="site-nav" aria-label="Main navigation">
-      <a href="index.html#top">Home</a>
+      <a class="site-nav__home-link" href="index.html#top" aria-label="Home">
+        <img class="site-nav__home-icon" src="assets/images/home-icon.svg" alt="" aria-hidden="true">
+      </a>
       <div class="nav-links">
         <a href="aboutme.html" aria-current="page">The Artist</a>
         <a href="index.html#work">Gallery</a>
@@ -35,19 +38,19 @@
     <section class="about-hero" id="top" aria-labelledby="about-title">
       <span class="about-hero__plus about-hero__plus--left" aria-hidden="true">+</span>
       <span class="about-hero__plus about-hero__plus--right" aria-hidden="true">+</span>
+      <span class="about-hero__plus about-hero__plus--bottom-left" aria-hidden="true">+</span>
+      <span class="about-hero__plus about-hero__plus--bottom-right" aria-hidden="true">+</span>
       <div class="about-hero__inner">
         <div class="about-copy">
           <h1 class="about-title" id="about-title">
             <span aria-hidden="true">✱</span> THE ARTIST
           </h1>
           <p class="about-lead">
-            Lorem ipsum dolor sit amet, <em>consectetur adipiscing</em> elit, sed do eiusmod tempor.
+            <em>Caio Sanfelice</em> is a photographer and image-maker. An MA graduate of the <strong>London College of Communication</strong>, his work has been exhibited and published internationally, including <strong>Dazed</strong> and <strong>Vogue Italia</strong>, and is held in the institution's permanent collection
           </p>
           <p class="about-body">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vitae sem at lacus
-            consequat feugiat. Integer euismod, erat vel tincidunt malesuada, justo velit
-            ullamcorper lorem, non pretium magna neque sed sapien. Sed ut perspiciatis unde
-            omnis iste natus error sit voluptatem accusantium doloremque laudantium.
+            His practice spans photography, creative direction and set production. The disciplines are not treated as separate crafts: photography, fashion, painting and set design operate within a single practice, in which the artist is present at every stage — conception, construction and execution. The resulting image is not a record of a found scene; it is the final object of a constructed one.
+            In 2026, Caio joins UAL's Creative Business Accelerator to develop Caio Sanfelice Studio as a multidisciplinary house for exhibition, publication and collaboration.
           </p>
           <blockquote class="about-quote">
             <p>The result doesn't <strong>document</strong> a scene — it <strong>constructs</strong> one.</p>
@@ -63,53 +66,61 @@
       <div class="about-services__list">
         <article class="service-card">
           <h2 class="service-card__title">
-            <span class="service-card__slashes" aria-hidden="true">//</span> PHOTOGRAPHY
-            <span class="service-card__plus" aria-hidden="true">+</span>
+            <button class="service-card__trigger" type="button" aria-expanded="false" aria-controls="service-photography">
+              <span class="service-card__slashes" aria-hidden="true">//</span> PHOTOGRAPHY
+              <span class="service-card__plus" aria-hidden="true">+</span>
+            </button>
           </h2>
-          <div class="service-card__details">
+          <div class="service-card__details" id="service-photography" inert>
             <div class="service-card__details-inner">
               <a class="service-card__link" href="gallery.html">See more</a>
-              <p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi, sed do eiusmod tempor.</p>
-              <img src="assets/images/portraits.png" alt="Photography work (placeholder)" loading="lazy">
+              <p class="service-desc">Fashion, personal and editorial shoots; corporate and portfolio portraits; product photography; album covers. Delivered as high-resolution retouched files. Sessions available in studio or on location, with lighting and creative direction handled in-house.</p>
+              <img src="assets/images/fashion.png" alt="Fashion Editorial - Red dress" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
           </div>
         </article>
         <article class="service-card">
           <h2 class="service-card__title">
-            <span class="service-card__slashes" aria-hidden="true">//</span> BEAUTY
-            <span class="service-card__plus" aria-hidden="true">+</span>
+            <button class="service-card__trigger" type="button" aria-expanded="false" aria-controls="service-beauty">
+              <span class="service-card__slashes" aria-hidden="true">//</span> BEAUTY
+              <span class="service-card__plus" aria-hidden="true">+</span>
+            </button>
           </h2>
-          <div class="service-card__details">
+          <div class="service-card__details" id="service-beauty" inert>
             <div class="service-card__details-inner">
               <a class="service-card__link" href="gallery.html">See more</a>
-              <p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi, sed do eiusmod tempor.</p>
-              <img src="assets/images/portraits.png" alt="Beauty work (placeholder)" loading="lazy">
+              <p class="service-desc">Hair and makeup for photographic and fashion productions: natural, editorial, artistic and scenic makeup. Includes character continuity across a full shoot day, plus costume and cosplay construction when the production requires it. On-set touch-ups included.</p>
+              <img src="assets/images/makeup.jpg" alt="MUA working" loading="lazy">
             </div>
           </div>
         </article>
         <article class="service-card">
           <h2 class="service-card__title">
-            <span class="service-card__slashes" aria-hidden="true">//</span> SET PRODUCTION
-            <span class="service-card__plus" aria-hidden="true">+</span>
+            <button class="service-card__trigger" type="button" aria-expanded="false" aria-controls="service-set-production">
+              <span class="service-card__slashes" aria-hidden="true">//</span> SET PRODUCTION
+              <span class="service-card__plus" aria-hidden="true">+</span>
+            </button>
           </h2>
-          <div class="service-card__details">
+          <div class="service-card__details" id="service-set-production" inert>
             <div class="service-card__details-inner">
               <a class="service-card__link" href="gallery.html">See more</a>
-              <p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi, sed do eiusmod tempor.</p>
-              <img src="assets/images/portraits.png" alt="Set production work (placeholder)" loading="lazy">
+              <p class="service-desc">Design and construction of photographic backgrounds and sets: flats, painted backdrops, textured panels and modular pieces. Built to the shoot's lighting plan and colour palette, assembled and struck on site. Transportable systems available for recurring productions.</p>
+              <img src="assets/images/set-production.jpg" alt="Alice in Wonderland 50th anniversary scenario exhibition" loading="lazy">
             </div>
           </div>
         </article>
         <article class="service-card">
           <h2 class="service-card__title">
-            <span class="service-card__slashes" aria-hidden="true">//</span> STAGE &amp; SCREEN
-            <span class="service-card__plus" aria-hidden="true">+</span>
+            <button class="service-card__trigger" type="button" aria-expanded="false" aria-controls="service-stage-screen">
+              <span class="service-card__slashes" aria-hidden="true">//</span> STAGE &amp; SCREEN
+              <span class="service-card__plus" aria-hidden="true">+</span>
+            </button>
           </h2>
-          <div class="service-card__details">
+          <div class="service-card__details" id="service-stage-screen" inert>
             <div class="service-card__details-inner">
               <a class="service-card__link" href="gallery.html">See more</a>
-              <p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi, sed do eiusmod tempor.</p>
-              <img src="assets/images/portraits.png" alt="Stage and screen work (placeholder)" loading="lazy">
+              <p class="service-desc">Costume, scenery and prop production for theatre, musicals and television. Scope covers design, material sourcing, building and fittings — with versions engineered for stage durability and camera-specific finishes (textures and colours tuned for how they read on screen).</p>
+              <img src="assets/images/stage.png" alt="Frida Khalo costume" loading="lazy">
             </div>
           </div>
         </article>
@@ -160,5 +171,37 @@
       <p>© 2026, Caio Sanfelice, all images are subjected to copyright</p>
     </div>
   </footer>
+  <script>
+    const serviceCards = [...document.querySelectorAll(".service-card")];
+    const mobileServices = window.matchMedia("(max-width: 48rem)");
+
+    function setOpenServiceCard(openCard, disableClosedPanels) {
+      serviceCards.forEach((card) => {
+        const isOpen = card === openCard;
+        card.classList.toggle("is-open", isOpen);
+        card.querySelector(".service-card__trigger").setAttribute("aria-expanded", String(isOpen));
+        card.querySelector(".service-card__details").inert = disableClosedPanels && !isOpen;
+      });
+    }
+
+    function syncServiceCards() {
+      setOpenServiceCard(mobileServices.matches ? serviceCards[0] : null, mobileServices.matches);
+    }
+
+    syncServiceCards();
+    mobileServices.addEventListener("change", syncServiceCards);
+
+    serviceCards.forEach((card) => {
+      const trigger = card.querySelector(".service-card__trigger");
+
+      trigger.addEventListener("click", () => {
+        if (!mobileServices.matches) return;
+
+        const shouldOpen = !card.classList.contains("is-open");
+        setOpenServiceCard(shouldOpen ? card : null, true);
+      });
+    });
+  </script>
+<script src="assets/js/substack.js"></script>
 </body>
 </html>

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="assets/images/fav-icon.svg">
     <title>Sanfelice Studio</title>
 
 
@@ -26,7 +27,9 @@
 
 <header class="header">
   <nav class="site-nav" aria-label="Main navigation">
-    <a href="#top">Home</a>
+    <a class="site-nav__home-link" href="#top" aria-label="Home">
+      <img class="site-nav__home-icon" src="assets/images/home-icon.svg" alt="" aria-hidden="true">
+    </a>
     <div class="nav-links">
       <a href="aboutme.html">The Artist</a>
       <a href="#work">Gallery</a>
@@ -49,6 +52,8 @@
       <p class="hero__location">London</p>
     </div>
     <a class="hero-scroll" href="#work">Scroll down for portfolio</a>
+    <span class="hero__plus hero__plus--top-left" aria-hidden="true">+</span>
+    <span class="hero__plus hero__plus--top-right" aria-hidden="true">+</span>
     <span class="hero__plus hero__plus--left" aria-hidden="true">+</span>
     <span class="hero__plus hero__plus--right" aria-hidden="true">+</span>
   </section>
@@ -150,16 +155,7 @@
   </div>
 </footer>
 
-<script>
-  const footerSubstackForm = document.querySelector('.footer-substack__form');
-  const footerSubstackMessage = document.querySelector('.footer-substack__message');
 
-  footerSubstackForm.addEventListener('submit', () => {
-    footerSubstackForm.hidden = true;
-    footerSubstackMessage.textContent = 'Almost done — check your inbox to confirm.';
-    footerSubstackMessage.hidden = false;
-  });
-</script>
-
+<script src="assets/js/substack.js"></script>
 </body>
 </html>
