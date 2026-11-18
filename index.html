@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/svg+xml" href="assets/images/fav-icon.svg">
+    <meta name="description" content="Sanfelice Studio — portrait and editorial photography by Caio Sanfelice, based in London.">
+    <link rel="icon" type="image/png" href="assets/images/fav-icon.png">
     <title>Sanfelice Studio</title>
 
 
@@ -14,7 +15,7 @@
 
     <!-- Font -->
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Macondo&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400..800;1,400..800&display=swap');
     </style>
 
    <!-- CSS (after the bootstrap, library, fonts) -->
@@ -25,27 +26,12 @@
 
 <body>
 
-<header class="header">
-  <nav class="site-nav" aria-label="Main navigation">
-    <a class="site-nav__home-link" href="#top" aria-label="Home">
-      <img class="site-nav__home-icon" src="assets/images/home-icon.svg" alt="" aria-hidden="true">
-    </a>
-    <div class="nav-links">
-      <a href="aboutme.html">The Artist</a>
-      <a href="#work">Gallery</a>
-      <a href="contact.html">Contact</a>
-      <a href="https://www.instagram.com/sanfelicecaio/"
-         target="_blank"
-         rel="noopener"
-         aria-label="Instagram"
-         title="Instagram">
-        <i class="fa-brands fa-instagram" aria-hidden="true"></i>
-      </a>
-    </div>
-  </nav>
-</header>
+<!-- ===== Header / main navigation (components/navbar.html) ===== -->
+<div id="site-navbar"></div>
 
+<!-- ===== Main content ===== -->
 <main>
+  <!-- Hero -->
   <section class="hero" id="top" aria-labelledby="hero-title">
     <div class="hero__content">
       <h1 class="hero__title" id="hero-title">Sanfelice Studio</h1>
@@ -58,15 +44,17 @@
     <span class="hero__plus hero__plus--right" aria-hidden="true">+</span>
   </section>
 
-  <section class="section gallery-section" id="work" aria-labelledby="gallery-title">
+  <!-- Gallery -->
+  <section class="section gallery-section" id="work" aria-labelledby="selected-work-title">
+    <h2 class="gallery-title" id="selected-work-title">Selected work</h2>
     <nav class="gallery-categories" aria-label="Gallery categories">
       <ul class="gallery-category-list">
         <li class="gallery-category-item">
-          <h2 class="gallery-category-heading" id="gallery-title">
+          <h3 class="gallery-category-heading">
             <a class="gallery-category-link" href="portraits.html" aria-current="page">
               <span class="asterisk" aria-hidden="true">✱</span><span>Portraits</span>
             </a>
-          </h2>
+          </h3>
           <span class="gallery-category-separator" aria-hidden="true">·</span>
         </li>
         <li class="gallery-category-item">
@@ -80,82 +68,50 @@
     </nav>
     <div class="grid">
       <figure class="card">
-        <img src="/assets/images/portraits.png" alt="Fashion portrait in a black hat" loading="lazy">
+        <img src="assets/images/" alt="Fashion portrait in a black hat" loading="lazy">
+        <figcaption class="card__label">Portraits</figcaption>
       </figure>
       <figure class="card">
-        <img src="/assets/images/portraits.png" alt="Fashion Portrait" loading="lazy">
+        <img src="assets/images/portraits.png" alt="Close-up fashion portrait with soft side light" loading="lazy">
+        <figcaption class="card__label">Portraits</figcaption>
       </figure>
       <figure class="card">
-        <img src="/assets/images/portraits.png" alt="Editorial fashion portrait in a sculptural outfit" loading="lazy">
+        <img src="assets/images/portraits.png" alt="Editorial fashion portrait in a sculptural outfit" loading="lazy">
+        <figcaption class="card__label">Portraits</figcaption>
       </figure>
       <figure class="card">
-        <img src="/assets/images/portraits.png" alt="Fashion portrait in a black hat" loading="lazy">
+        <img src="assets/images/portraits.png" alt="Fashion portrait in a black hat" loading="lazy">
+        <figcaption class="card__label">Portraits</figcaption>
       </figure>
       <figure class="card">
-        <img src="/assets/images/portraits.png" alt="Close-up fashion portrait" loading="lazy">
+        <img src="assets/images/portraits.png" alt="Close-up fashion portrait with soft side light" loading="lazy">
+        <figcaption class="card__label">Portraits</figcaption>
       </figure>
       <figure class="card">
-        <img src="/assets/images/portraits.png" alt="Editorial fashion portrait in a sculptural outfit" loading="lazy">
+        <img src="assets/images/portraits.png" alt="Editorial fashion portrait in a sculptural outfit" loading="lazy">
+        <figcaption class="card__label">Portraits</figcaption>
       </figure>
       <figure class="card">
-        <img src="/assets/images/portraits.png" alt="Fashion portrait in a black hat" loading="lazy">
+        <img src="assets/images/portraits.png" alt="Fashion portrait in a black hat" loading="lazy">
+        <figcaption class="card__label">Portraits</figcaption>
       </figure>
       <figure class="card">
-        <img src="/assets/images/portraits.png" alt="Close-up fashion portrait" loading="lazy">
+        <img src="assets/images/portraits.png" alt="Close-up fashion portrait with soft side light" loading="lazy">
+        <figcaption class="card__label">Portraits</figcaption>
       </figure>
       <figure class="card">
-        <img src="/assets/images/portraits.png" alt="Editorial fashion portrait in a sculptural outfit" loading="lazy">
+        <img src="assets/images/portraits.png" alt="Editorial fashion portrait in a sculptural outfit" loading="lazy">
+        <figcaption class="card__label">Portraits</figcaption>
       </figure>
     </div>
   </section>
 </main>
 
-<footer class="site-footer site-footer--home">
-  <section class="footer-substack" aria-label="Substack newsletter signup">
-    <div class="footer-substack__layout">
-      <svg class="footer-substack__logo" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-        <path d="M22.539 8.242H1.46V5.406h21.08v2.836z"/>
-        <path d="M1.46 10.812V24L12 18.11 22.54 24V10.812H1.46z"/>
-        <path d="M22.54 0H1.46v2.836h21.08V0z"/>
-      </svg>
-      <div class="footer-substack__content">
-        <form class="footer-substack__form"
-              action="https://caiosanfelice.substack.com/api/v1/free?nojs=true"
-              method="POST"
-              target="footer-substack-response">
-          <label class="footer-substack__visually-hidden" for="footer-substack-email">Email address</label>
-          <input id="footer-substack-email"
-                 type="email"
-                 name="email"
-                 autocomplete="email"
-                 spellcheck="false"
-                 placeholder="Type your email..."
-                 required>
-          <button type="submit">Subscribe</button>
-        </form>
-        <p class="footer-substack__message" role="status" aria-live="polite" hidden></p>
-      </div>
-    </div>
-    <p class="footer-substack__legal">
-      By subscribing you agree to Substack's
-      <a href="https://substack.com/tos">Terms of Use</a>, our
-      <a href="https://substack.com/privacy">Privacy Policy</a> and our
-      <a href="https://substack.com/information-collection-notice">Information collection notice</a>
-    </p>
-    <iframe class="footer-substack__frame"
-            name="footer-substack-response"
-            title="Substack signup response"></iframe>
-  </section>
-  <div class="footer-brand">
-    <img src="assets/images/logo-sanfelicestudio.svg" alt="Sanfelice Studio">
-  </div>
-  <div class="footer-contact">
-    <a href="contact.html">Get in touch &gt;&gt;</a>
-    <p>© 2026, Caio Sanfelice, all images are subjected to copyright</p>
-  </div>
-</footer>
+<!-- ===== Footer (components/footer.html) ===== -->
+<div id="site-footer"></div>
 
 
-<script src="assets/js/substack.js"></script>
+<!-- Shared navbar + footer -->
+<script src="assets/js/components.js"></script>
 </body>
 </html>

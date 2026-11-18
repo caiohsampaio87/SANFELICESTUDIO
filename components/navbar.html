@@ -1,0 +1,24 @@
+<!-- ===== Header / main navigation (shared component, loaded by assets/js/components.js) ===== -->
+<header class="header">
+  <nav class="site-nav container" aria-label="Main navigation">
+    <a class="site-nav__home-link" href="index.html#top" aria-label="Home">
+      <!-- full wordmark on tablet/desktop, home icon on phones (no room for a legible wordmark) -->
+      <picture>
+        <source media="(max-width: 40rem)" srcset="assets/images/home-icon.svg">
+        <img class="site-nav__home-icon" src="assets/images/logo-sanfelicestudio.svg" alt="" aria-hidden="true">
+      </picture>
+    </a>
+    <div class="nav-links">
+      <a href="aboutme.html" data-nav="aboutme">The Artist</a>
+      <a href="index.html#work" data-nav="gallery">Gallery</a>
+      <a href="contact.html" data-nav="contact">Contact</a>
+      <a href="https://www.instagram.com/sanfelicecaio/"
+         target="_blank"
+         rel="noopener"
+         aria-label="Instagram"
+         title="Instagram">
+        <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+      </a>
+    </div>
+  </nav>
+</header>

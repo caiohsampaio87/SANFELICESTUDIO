@@ -3,44 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get in touch with Sanfelice Studio for portrait, editorial and fashion photography commissions in London.">
   <link rel="icon" type="image/svg+xml" href="assets/images/fav-icon.svg">
   <title>Contact | Sanfelice Studio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Macondo&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400..800;1,400..800&display=swap');
   </style>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <header class="header contact-header">
-    <nav class="site-nav" aria-label="Main navigation">
-      <a class="site-nav__home-link" href="index.html#top" aria-label="Home">
-        <img class="site-nav__home-icon" src="assets/images/home-icon.svg" alt="" aria-hidden="true">
-      </a>
-      <div class="nav-links">
-        <a href="aboutme.html">The Artist</a>
-        <a href="index.html#work">Gallery</a>
-        <a href="contact.html" aria-current="page">Contact</a>
-        <a href="https://www.instagram.com/sanfelicecaio/"
-           target="_blank"
-           rel="noopener"
-           aria-label="Instagram"
-           title="Instagram">
-          <i class="fa-brands fa-instagram" aria-hidden="true"></i>
-        </a>
-      </div>
-    </nav>
-  </header>
+  <!-- ===== Header / main navigation (components/navbar.html) ===== -->
+  <div id="site-navbar"></div>
 
+  <!-- ===== Main content ===== -->
   <main class="contact-page-main">
     <span class="hero__plus hero__plus--top-left" aria-hidden="true">+</span>
     <span class="hero__plus hero__plus--top-right" aria-hidden="true">+</span>
     <span class="hero__plus hero__plus--left" aria-hidden="true">+</span>
     <span class="hero__plus hero__plus--right" aria-hidden="true">+</span>
+    <!-- Contact card -->
     <div class="contact-card">
+      <!-- Contact form -->
       <section class="contact-form-panel" aria-labelledby="contact-title">
         <h1 class="contact-form-title" id="contact-title">
-          <span class="contact-form-title__asterisk" aria-hidden="true">✱</span>GET IN TOUCH
+          <span class="contact-form-title__asterisk" aria-hidden="true">*</span>GET IN TOUCH
         </h1>
         <form class="contact-form"
               id="contact-form"
@@ -107,6 +94,7 @@
            hidden></p>
       </section>
 
+      <!-- Map and contact details -->
       <section class="contact-information" aria-label="Location and contact details">
         <iframe class="contact-map"
                 src="https://www.google.com/maps?q=66+Norlington+Rd,+London+E10+6LA&amp;output=embed"
@@ -130,50 +118,9 @@
       </section>
     </div>
   </main>
-  <footer class="site-footer site-footer--home">
-    <section class="footer-substack" aria-label="Substack newsletter signup">
-      <div class="footer-substack__layout">
-        <svg class="footer-substack__logo" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-          <path d="M22.539 8.242H1.46V5.406h21.08v2.836z"/>
-          <path d="M1.46 10.812V24L12 18.11 22.54 24V10.812H1.46z"/>
-          <path d="M22.54 0H1.46v2.836h21.08V0z"/>
-        </svg>
-        <div class="footer-substack__content">
-          <form class="footer-substack__form"
-                action="https://caiosanfelice.substack.com/api/v1/free?nojs=true"
-                method="POST"
-                target="footer-substack-response">
-            <label class="visually-hidden" for="footer-substack-email">Email address</label>
-            <input id="footer-substack-email"
-                   type="email"
-                   name="email"
-                   autocomplete="email"
-                   spellcheck="false"
-                   placeholder="Type your email..."
-                   required>
-            <button type="submit">Subscribe</button>
-          </form>
-          <p class="footer-substack__message" role="status" aria-live="polite" hidden></p>
-        </div>
-      </div>
-      <p class="footer-substack__legal">
-        By subscribing you agree to Substack's
-        <a href="https://substack.com/tos">Terms of Use</a>, our
-        <a href="https://substack.com/privacy">Privacy Policy</a> and our
-        <a href="https://substack.com/information-collection-notice">Information collection notice</a>
-      </p>
-      <iframe class="footer-substack__frame"
-              name="footer-substack-response"
-              title="Substack signup response"></iframe>
-    </section>
-    <div class="footer-brand">
-      <img src="assets/images/logo-sanfelicestudio.svg" alt="Sanfelice Studio">
-    </div>
-    <div class="footer-contact">
-      <a href="contact.html">Get in touch &gt;&gt;</a>
-      <p>© 2026, Caio Sanfelice, all images are subjected to copyright</p>
-    </div>
-  </footer>
+  <!-- ===== Footer (components/footer.html) ===== -->
+  <div id="site-footer"></div>
+  <!-- Page script -->
   <script>
     const contactForm = document.querySelector("#contact-form");
     const contactStatus = document.querySelector("#contact-form-status");
@@ -219,6 +166,7 @@
       }
     });
   </script>
-<script src="assets/js/substack.js"></script>
+<!-- Shared navbar + footer -->
+<script src="assets/js/components.js"></script>
 </body>
 </html>
